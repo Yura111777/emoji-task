@@ -46,6 +46,13 @@ class EmojiStore {
     removeEntry(index: number) {
         this.entries.splice(index, 1);
     }
+
+    moveEntry(fromIndex: number, toIndex: number) {
+        const updated = [...this.entries];
+        const [moved] = updated.splice(fromIndex, 1);
+        updated.splice(toIndex, 0, moved);
+        this.entries = updated;
+    }
 }
 
 export const emojiStore = new EmojiStore();

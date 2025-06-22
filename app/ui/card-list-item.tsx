@@ -17,7 +17,7 @@ export default function CardListItem({
     const { emojiStore } = useStore();
 
     return (
-        <div className="card w-full sm:w-1/3 md:w-1/3 lg:w-1/6 p-2">
+        <div className="card w-full  p-2">
             <div className="card-body p-3 relative rounded-2xl shadow-md overflow-hidden sm:min-h-[480px] flex sm:flex-col sm:justify-center items-center text-4xl font-bold sm:text-white">
                 <div
                     className={`sm:absolute w-1/4 h-[100px] sm:w-full sm:h-auto inset-0 opacity-60 ${timeClass}:bg-${timeClass}  bg-cover bg-center`}
