@@ -37,16 +37,16 @@ body {
     background-image: url('/bg/night.jpg');
   }
 }
-div[role="button"]{
+.dnd-drop{
   width: 15%;
 }
 @media (max-width: 1024px) {
-  div[role="button"]{
+  .dnd-drop{
     width: 25%;
   }
 }
 @media (max-width: 767px) {
-  div[role="button"]{
+  .dnd-drop{
     width: 100%;
   }
 }

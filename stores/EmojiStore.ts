@@ -6,6 +6,7 @@ export interface EmojiEntry {
     emoji: string | null;
     text: string | null | undefined;
     dayType?: string | null | undefined;
+    id: string;
 }
 const STORAGE_KEY = 'emoji_store_entries';
 
@@ -35,16 +36,17 @@ class EmojiStore {
             }
         );
     }
-    setEmoji(emoji: string | null, text?: string | null, dayType?: string | null) {
+    setEmoji(id: string, emoji: string | null, text?: string | null, dayType?: string | null) {
         this.entries.push({
             emoji,
             text,
             dayType,
+            id,
         });
     }
 
-    removeEntry(index: number) {
-        this.entries.splice(index, 1);
+    removeEntry(id: string) {
+        this.entries = this.entries.filter(entry => entry.id !== id);
     }
 
     moveEntry(fromIndex: number, toIndex: number) {

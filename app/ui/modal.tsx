@@ -21,7 +21,8 @@ export default function Modal() {
     }, []);
     const submit = () => {
         if (selectedEmoji) {
-            emojiStore.setEmoji(selectedEmoji, comment, timeClass);
+            const id = generateIdByTime();
+            emojiStore.setEmoji(id, selectedEmoji, comment, timeClass);
             setOpen(false);
             setValidation(false);
         } else {
@@ -43,6 +44,10 @@ export default function Modal() {
         setSelectedEmoji(null);
         setComment(null);
         setValidation(false);
+    };
+
+    const generateIdByTime = (): string => {
+        return Math.floor(Date.now() / 1000).toString();
     };
     return (
         <div>
